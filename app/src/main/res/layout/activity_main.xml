@@ -24,7 +24,6 @@
     <include
         android:id="@+id/footertab"
         layout="@layout/footer"
-
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />

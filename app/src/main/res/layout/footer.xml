@@ -32,7 +32,7 @@
                 android:id="@+id/imghome"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:src="@mipmap/srch" />
+                android:src="@mipmap/home_black" />
 
             <TextView
                 android:id="@+id/homtxt"

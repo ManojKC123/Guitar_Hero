@@ -102,9 +102,9 @@
 
             <ImageView
                 android:id="@+id/hist"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@mipmap/bsicons"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:src="@drawable/logo"
 
                 />
 
@@ -112,7 +112,7 @@
                 android:id="@+id/searchtxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Package"
+                android:text="Guitars"
                 android:textColor="#000"
                 android:textSize="12dp" />
 

@@ -35,16 +35,16 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="cursive"
                         android:theme="@style/Widget.MaterialComponents.Tooltip"
-                        android:textSize="35dp"
+                        android:textSize="30dp"
                         android:textStyle="bold"
-                        android:text="ONLINE BUS TICKET"
+                        android:text="GUITARS ONLINE STORE"
                         android:textColor="#160242"
                         />
                 </LinearLayout>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="350dp"
-                    android:src="@drawable/logo"/>
+                    android:src="@drawable/guitar_hero"/>
                 <TextView
                     android:id="@+id/logotext"
                     android:layout_width="wrap_content"

@@ -21,12 +21,7 @@
             android:orientation="vertical"
             android:padding="6dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/logo"
-                />
+
             <TextView
                 android:id="@+id/logotext"
                 android:layout_width="wrap_content"
@@ -88,12 +83,24 @@
 
 
             <EditText
-                android:id="@+id/pass"
+                android:id="@+id/pass1"
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edit_radius"
                 android:hint="Password"
+                android:paddingLeft="10dp"
+                android:password="true"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="14dp" />
+            <EditText
+                android:id="@+id/pass2"
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_radius"
+                android:hint="Confirm Password"
                 android:paddingLeft="10dp"
                 android:password="true"
                 android:singleLine="true"

@@ -20,6 +20,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        etUsername = findViewById(R.id.EditText_email)
+        etPassword = findViewById(R.id.EditText_password)
+        btnLogin = findViewById(R.id.loginbtn)
+        btnSignUp = findViewById(R.id.signupbtn)
 
         btnLogin.setOnClickListener {
 

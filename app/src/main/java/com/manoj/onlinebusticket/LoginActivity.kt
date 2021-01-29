@@ -9,6 +9,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.manoj.onlinebusticket.db.OnlineBusTicketDB
+import com.manoj.onlinebusticket.entity.User
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class LoginActivity : AppCompatActivity() {
 
@@ -26,21 +33,7 @@ class LoginActivity : AppCompatActivity() {
         btnSignUp = findViewById(R.id.signupbtn)
 
         btnLogin.setOnClickListener {
-
-            if (etPassword.text.toString() == "admin" && etUsername.text.toString() == "admin"){
-                val intent = Intent(this@LoginActivity as Context, MainActivity::class.java)
-                this@LoginActivity.startActivity(intent)
-                finish()
-            }
-            else {
-                Toast.makeText(
-                    this@LoginActivity as Context,
-                    "Either Username or Password is Incorrect",
-                    Toast.LENGTH_SHORT
-                ).show()
-                etUsername.error = "Username or Password is incorrect"
-                etUsername.requestFocus()
-            }
+            login()
         }
 
         btnSignUp.setOnClickListener(
@@ -49,5 +42,39 @@ class LoginActivity : AppCompatActivity() {
         })
 
 
+
+    }
+    private fun login(){
+        val username = etUsername.text.toString()
+        val password = etPassword.text.toString()
+
+        var user: User? = null
+        CoroutineScope(Dispatchers.IO).launch {
+            user = OnlineBusTicketDB
+                    .getInstance(this@LoginActivity)
+                    .getUserDao()
+                    .checkUser(username,password)
+            if (user == null){
+                withContext(Main){
+                    Toast.makeText(this@LoginActivity,
+                    "Invalid Credentials!!!", Toast.LENGTH_SHORT)
+                            .show()
+                }
+            }
+            else{
+                withContext(Main){
+                    Toast.makeText(this@LoginActivity,
+                            "Login Successful !!!", Toast.LENGTH_SHORT)
+                            .show()
+                }
+                startActivity(
+                        Intent(
+                                this@LoginActivity,
+                                MainActivity::class.java
+                        )
+                )
+            finish()
+            }
+        }
     }
 }

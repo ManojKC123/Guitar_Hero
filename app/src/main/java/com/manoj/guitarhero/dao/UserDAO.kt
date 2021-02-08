@@ -1,9 +1,9 @@
-package com.manoj.onlinebusticket.dao
+package com.manoj.guitarhero.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.manoj.onlinebusticket.entity.User
+import com.manoj.guitarhero.entity.User
 
 @Dao
 interface UserDAO {

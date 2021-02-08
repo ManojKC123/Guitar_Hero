@@ -1,6 +1,5 @@
-package com.manoj.onlinebusticket.entity
+package com.manoj.guitarhero.entity
 
-import android.location.Address
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

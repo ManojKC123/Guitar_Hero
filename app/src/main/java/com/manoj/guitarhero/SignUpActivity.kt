@@ -1,12 +1,12 @@
-package com.manoj.onlinebusticket
+package com.manoj.guitarhero
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.manoj.onlinebusticket.db.OnlineBusTicketDB
-import com.manoj.onlinebusticket.entity.User
+import com.manoj.guitarhero.db.OnlineBusTicketDB
+import com.manoj.guitarhero.entity.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main

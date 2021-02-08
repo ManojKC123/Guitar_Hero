@@ -1,4 +1,4 @@
-package com.manoj.onlinebusticket
+package com.manoj.guitarhero
 
 import android.content.Context
 import android.content.Intent
@@ -9,8 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.manoj.onlinebusticket.db.OnlineBusTicketDB
-import com.manoj.onlinebusticket.entity.User
+import com.manoj.guitarhero.db.OnlineBusTicketDB
+import com.manoj.guitarhero.entity.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
@@ -62,7 +62,9 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
             else{
+
                 withContext(Main){
+                    saveSharedPref(username,password)
                     Toast.makeText(this@LoginActivity,
                             "Login Successful !!!", Toast.LENGTH_SHORT)
                             .show()
@@ -76,5 +78,15 @@ class LoginActivity : AppCompatActivity() {
             finish()
             }
         }
+    }
+
+   private fun saveSharedPref(username:String, password:String){
+        val sharedPref = getSharedPreferences("AppPref",
+                Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("username", username)
+        editor.putString("password", password)
+
+        editor.apply()
     }
 }

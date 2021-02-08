@@ -1,10 +1,9 @@
-package com.manoj.onlinebusticket
+package com.manoj.guitarhero
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
-import com.manoj.onlinebusticket.fragments.ProfileFragment
+import com.manoj.guitarhero.fragments.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnProfileFragment: ImageView

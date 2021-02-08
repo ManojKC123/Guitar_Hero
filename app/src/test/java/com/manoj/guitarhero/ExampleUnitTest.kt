@@ -1,4 +1,4 @@
-package com.manoj.onlinebusticket
+package com.manoj.guitarhero
 
 import org.junit.Test
 

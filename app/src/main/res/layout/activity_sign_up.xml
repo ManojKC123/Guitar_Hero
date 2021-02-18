@@ -31,19 +31,33 @@
                 android:textSize="44dp" />
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/fname"
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/edit_radius"
-                android:hint="Name"
+                android:hint="First Name"
                 android:paddingLeft="10dp"
                 android:singleLine="true"
                 android:textColor="#000"
                 android:textSize="14dp" />
 
 
+
             <EditText
-                android:id="@+id/number"
+                android:id="@+id/lname"
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_radius"
+                android:hint="Last Name"
+                android:maxLength="10"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/etnumber"
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="10dp"
@@ -55,6 +69,7 @@
                 android:singleLine="true"
                 android:textColor="#000"
                 android:textSize="14dp" />
+
             <EditText
                 android:id="@+id/address"
                 android:layout_width="fill_parent"
@@ -66,15 +81,16 @@
                 android:singleLine="true"
                 android:textColor="#000"
                 android:textSize="14dp" />
+
             <EditText
                 android:id="@+id/mailId"
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edit_radius"
-                android:hint="Mail Id"
+                android:hint="Email ID"
                 android:inputType="textEmailAddress"
-                android:maxLength="10"
+                android:maxLength="50"
                 android:paddingLeft="10dp"
                 android:singleLine="true"
                 android:textColor="#000"
@@ -89,10 +105,11 @@
                 android:background="@drawable/edit_radius"
                 android:hint="Password"
                 android:paddingLeft="10dp"
-                android:password="true"
+                android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="#000"
                 android:textSize="14dp" />
+
             <EditText
                 android:id="@+id/pass2"
                 android:layout_width="fill_parent"
@@ -101,8 +118,9 @@
                 android:background="@drawable/edit_radius"
                 android:hint="Confirm Password"
                 android:paddingLeft="10dp"
-                android:password="true"
                 android:singleLine="true"
+                android:inputType="textPassword"
+
                 android:textColor="#000"
                 android:textSize="14dp" />
 

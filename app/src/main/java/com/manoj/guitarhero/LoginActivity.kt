@@ -5,12 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
-import com.manoj.guitarhero.db.OnlineBusTicketDB
+import android.widget.*
+import com.google.android.material.snackbar.Snackbar
+import com.manoj.guitarhero.api.ServiceBuilder
+//import com.manoj.guitarhero.db.GuitarHeroDB
 import com.manoj.guitarhero.entity.User
+import com.manoj.guitarhero.repository.UserRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
@@ -23,6 +23,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var btnSignUp: TextView
+
+    private lateinit var linearLayout: LinearLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -31,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.EditText_password)
         btnLogin = findViewById(R.id.loginbtn)
         btnSignUp = findViewById(R.id.signupbtn)
-
+        linearLayout = findViewById(R.id.linearLayout)
         btnLogin.setOnClickListener {
             login()
         }
@@ -47,37 +49,73 @@ class LoginActivity : AppCompatActivity() {
     private fun login(){
         val username = etUsername.text.toString()
         val password = etPassword.text.toString()
-
-        var user: User? = null
         CoroutineScope(Dispatchers.IO).launch {
-            user = OnlineBusTicketDB
-                    .getInstance(this@LoginActivity)
-                    .getUserDao()
-                    .checkUser(username,password)
-            if (user == null){
-                withContext(Main){
-                    Toast.makeText(this@LoginActivity,
-                    "Invalid Credentials!!!", Toast.LENGTH_SHORT)
-                            .show()
+            try {
+                val repository = UserRepository()
+                val response = repository.checkUser(username, password)
+                if (response.success == true) {
+                   // ServiceBuilder.token = "Bearer " + response.token
+                    startActivity(
+                            Intent(
+                                    this@LoginActivity,
+                                    MainActivity::class.java
+                            )
+                    )
+                    finish()
+                } else {
+                    withContext(Dispatchers.Main) {
+                        val snack =
+                                Snackbar.make(
+                                        linearLayout,
+                                        "Invalid credentials",
+                                        Snackbar.LENGTH_LONG
+                                )
+                        snack.setAction("OK", View.OnClickListener {
+                            snack.dismiss()
+                        })
+                        snack.show()
+                    }
                 }
-            }
-            else{
 
-                withContext(Main){
-                    saveSharedPref(username,password)
-                    Toast.makeText(this@LoginActivity,
-                            "Login Successful !!!", Toast.LENGTH_SHORT)
-                            .show()
+            } catch (ex: Exception) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(
+                            this@LoginActivity,
+                            "Login error", Toast.LENGTH_SHORT
+                    ).show()
                 }
-                startActivity(
-                        Intent(
-                                this@LoginActivity,
-                                MainActivity::class.java
-                        )
-                )
-            finish()
             }
         }
+//        var user: User? = null
+//        CoroutineScope(Dispatchers.IO).launch {
+//            user = GuitarHeroDB
+//                    .getInstance(this@LoginActivity)
+//                    .getUserDao()
+//                    .checkUser(username,password)
+//            if (user == null){
+//                withContext(Main){
+//                    Toast.makeText(this@LoginActivity,
+//                    "Invalid Credentials!!!", Toast.LENGTH_SHORT)
+//                            .show()
+//                }
+//            }
+//            else{
+//
+//                withContext(Main){
+//                    saveSharedPref(username,password)
+//                    Toast.makeText(this@LoginActivity,
+//                            "Login Successful !!!", Toast.LENGTH_SHORT)
+//                            .show()
+//                }
+//                startActivity(
+//                        Intent(
+//                                this@LoginActivity,
+//                                MainActivity::class.java
+//                        )
+//                )
+//            finish()
+//            }
+//        }
     }
 
    private fun saveSharedPref(username:String, password:String){

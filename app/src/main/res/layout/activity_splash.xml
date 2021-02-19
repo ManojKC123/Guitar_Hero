@@ -7,7 +7,7 @@
     android:id="@+id/activity_splash"
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
-    android:background="#3D5AFE">
+    android:background="@drawable/colorgradient">
 
     <ImageView
         android:id="@+id/imageView"
@@ -33,7 +33,7 @@
         android:fontFamily="@font/monoton"
         android:gravity="center"
         android:text="GUITAR     HERO"
-        android:textColor="#C8DADC"
+        android:textColor="#0A0B0B"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         android:fontFamily="cursive"
         android:gravity="center"
         android:text="Buy Guitar Online"
-        android:textColor="#D5CBCB"
+        android:textColor="#0B0B0B"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

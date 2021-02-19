@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3D5AFE"
+    android:background="@drawable/colorgradient"
     android:orientation="vertical"
     android:id="@+id/linearLayout"
     tools:context=".LoginActivity">
@@ -31,28 +31,17 @@
                     android:orientation="horizontal"
                     android:gravity="center"
                     android:layout_height="wrap_content">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="cursive"
-                        android:theme="@style/Widget.MaterialComponents.Tooltip"
+                        android:text="GUITARS ONLINE STORE"
+                        android:textColor="#070707"
                         android:textSize="30dp"
                         android:textStyle="bold"
-                        android:text="GUITARS ONLINE STORE"
-                        android:textColor="#160242"
-                        />
+                        android:theme="@style/Widget.MaterialComponents.Tooltip" />
                 </LinearLayout>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="350dp"
-                    android:src="@drawable/guitar_hero"/>
-                <TextView
-                    android:id="@+id/logotext"
-                    android:layout_width="wrap_content"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content"
-                    android:text="Greens Florist"
-                    android:textSize="44dp" />
 
                 <EditText
                     android:id="@+id/EditText_email"
@@ -84,6 +73,14 @@
                     android:singleLine="true"
                     android:textColor="#000"
                     android:textSize="14dp" />
+                <CheckBox
+                    android:layout_margin="10dp"
+                    android:layout_gravity="left"
+                    android:id="@+id/chkRememberMe"
+                    android:text="Remember Username"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
 
                 <Button
@@ -118,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:text="Don't have an account?"
                     android:textSize="15dp"
-                    android:textColor="#4e4e4e" />
+                    android:textColor="#F4F4F4" />
 
                 <TextView
                     android:id="@+id/signupbtn"
@@ -126,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:background="#00000000"
                     android:text="signup"
-                    android:textColor="#4e4e4e"
+                    android:textColor="#0C0000"
                     android:textSize="15dp"
                     android:textStyle="bold" />
             </LinearLayout>

@@ -18,16 +18,17 @@ class GuitarHeroTest {
         Assert.assertEquals(expectedResult, actualResult)
     }
 
-//    @Test
-//    fun registerUser() = runBlocking {
-//        val user =
-//                User(fname = "test", lname = "test", username = "zxxcxcx", password = "testpassword")
-//        userRepository = UserRepository()
-//        val response = userRepository.registerUser(user)
-//        val expectedResult = true
-//        val actualResult = response.success
-//        Assert.assertEquals(expectedResult, actualResult)
-//    }
+    @Test
+    fun registerUser() = runBlocking {
+        val user =
+                User(firstname = "test", lastname = "test", phone = "zxxcxcx",
+                        address = "testpassword", email = "z@gmail.com", password = "z")
+        userRepository = UserRepository()
+        val response = userRepository.registerUser(user)
+        val expectedResult = true
+        val actualResult = response.success
+        Assert.assertEquals(expectedResult, actualResult)
+    }
 //    // -----------------------------Student Testing-----------------------------
 //    @Test
 //    fun addStudent() = runBlocking {

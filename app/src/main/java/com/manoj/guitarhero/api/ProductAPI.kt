@@ -8,7 +8,7 @@ import retrofit2.http.Header
 interface ProductAPI {
 
     //get all students
-    @GET("student/")
+    @GET("/product/insert")
     suspend fun getAllProducts(
             @Header("Authorization") token : String,
     ): Response<AllProductsResponse>

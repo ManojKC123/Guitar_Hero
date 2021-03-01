@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceBuilder {
     private const val BASE_URL =
-        "http://localhost:3000/"
+        "http://10.0.2.2:3000/"
     var token: String? = null
     private val okHttp = OkHttpClient.Builder()
     private val retrofitBuilder = Retrofit.Builder()

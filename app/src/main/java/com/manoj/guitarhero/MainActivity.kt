@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.manoj.guitarhero.adapter.ProductAdapter
+import com.manoj.guitarhero.entity.Product
 import com.manoj.guitarhero.fragments.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
@@ -25,9 +27,16 @@ class MainActivity : AppCompatActivity() {
                 commit()
             }
         }
+
+        val products = arrayListOf<Product>()
+
+        for (i in 0..100){
+            products.add(Product("12345","JADFG","dfiuhekfjhk","YAMAHA",15000,"Blue","10%","3kg",""))
+        }
+
         product_rview.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = ProductAdapater{}
+            adapter = ProductAdapter(products)
 
 
         }

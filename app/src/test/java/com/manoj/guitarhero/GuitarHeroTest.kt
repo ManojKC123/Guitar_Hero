@@ -22,7 +22,7 @@ class GuitarHeroTest {
     fun registerUser() = runBlocking {
         val user =
                 User(firstname = "test", lastname = "test", phone = "zxxcxcx",
-                        address = "testpassword", email = "z@gmail.com", password = "z")
+                        address = "testpassword", email = "op@gmail.com", password = "z")
         userRepository = UserRepository()
         val response = userRepository.registerUser(user)
         val expectedResult = true

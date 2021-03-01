@@ -9,7 +9,7 @@ interface ProductAPI {
 
     //get all students
     @GET("student/")
-    suspend fun getAllStudents(
+    suspend fun getAllProducts(
             @Header("Authorization") token : String,
     ): Response<AllProductsResponse>
 }

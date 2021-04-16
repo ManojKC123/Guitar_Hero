@@ -3,23 +3,24 @@ package com.manoj.guitarhero
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.google.android.material.snackbar.Snackbar
 import com.manoj.guitarhero.api.ServiceBuilder
 //import com.manoj.guitarhero.db.GuitarHeroDB
-import com.manoj.guitarhero.entity.User
 import com.manoj.guitarhero.repository.UserRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity() : AppCompatActivity() {
 
     private val permissions = arrayOf(
             android.Manifest.permission.CAMERA,
@@ -27,11 +28,13 @@ class LoginActivity : AppCompatActivity() {
             android.Manifest.permission.ACCESS_FINE_LOCATION
     )
 
+
     private lateinit var etUsername: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var btnSignUp: TextView
     private lateinit var linearLayout: LinearLayout
+    private lateinit var checkremember: CheckBox
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
         btnLogin = findViewById(R.id.loginbtn)
         btnSignUp = findViewById(R.id.signupbtn)
         linearLayout = findViewById(R.id.linearLayout)
+        checkremember=findViewById(R.id.chkRememberMe)
 
         checkRunTimePermission()
 
@@ -86,12 +90,23 @@ class LoginActivity : AppCompatActivity() {
     private fun login(){
         val username = etUsername.text.toString()
         val password = etPassword.text.toString()
+        val notificationManager = NotificationManagerCompat.from(this)
+        val notificationChannels = Notification(this)
+        notificationChannels.createNotificationChannels()
+
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val repository = UserRepository()
                 val response = repository.checkUser(username, password)
                 if (response.success == true) {
                    ServiceBuilder.token = "Bearer " + response.token
+                    saveSharedPref()
+                    val notification = NotificationCompat.Builder(this@LoginActivity, notificationChannels.CHANNEL_1)
+                        .setSmallIcon(R.drawable.notification)
+                        .setContentTitle(response.message)
+                        .setColor(Color.GREEN)
+                        .build()
+                    notificationManager.notify(1, notification)
                     startActivity(
                             Intent(
                                     this@LoginActivity,
@@ -123,45 +138,19 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
-//        var user: User? = null
-//        CoroutineScope(Dispatchers.IO).launch {
-//            user = GuitarHeroDB
-//                    .getInstance(this@LoginActivity)
-//                    .getUserDao()
-//                    .checkUser(username,password)
-//            if (user == null){
-//                withContext(Main){
-//                    Toast.makeText(this@LoginActivity,
-//                    "Invalid Credentials!!!", Toast.LENGTH_SHORT)
-//                            .show()
-//                }
-//            }
-//            else{
-//
-//                withContext(Main){
-//                    saveSharedPref(username,password)
-//                    Toast.makeText(this@LoginActivity,
-//                            "Login Successful !!!", Toast.LENGTH_SHORT)
-//                            .show()
-//                }
-//                startActivity(
-//                        Intent(
-//                                this@LoginActivity,
-//                                MainActivity::class.java
-//                        )
-//                )
-//            finish()
-//            }
-//        }
     }
 
-   private fun saveSharedPref(username:String, password:String){
-        val sharedPref = getSharedPreferences("AppPref",
-                Context.MODE_PRIVATE)
-        val editor = sharedPref.edit()
-        editor.putString("username", username)
-        editor.putString("password", password)
+   private fun saveSharedPref(){
+       val username = etUsername.text.toString()
+       val password = etPassword.text.toString()
+       if (checkremember.isChecked){
+           val sharedPref = getSharedPreferences("AppPref",
+               Context.MODE_PRIVATE)
+           val editor = sharedPref.edit()
+           editor.putString("email", username)
+           editor.putString("password", password)
+           editor.apply()
+       }
 
-        editor.apply()
     }
 }

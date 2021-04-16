@@ -23,7 +23,7 @@ import org.junit.Rule
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class TestLogin {
+class LoginTest {
 
     @get:Rule
     val testRule = ActivityScenarioRule(LoginActivity::class.java)
@@ -44,6 +44,6 @@ class TestLogin {
         Thread.sleep(2000)
 
         onView(withId(R.id.tv_email))
-                 .check(ViewAssertions.matches(ViewMatchers.withText("Welcome Kiran1")))
+            .check(ViewAssertions.matches(ViewMatchers.withText("")))
     }
 }

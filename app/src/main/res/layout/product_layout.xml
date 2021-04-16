@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_margin="5dp">
+    android:orientation="vertical">
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="wrap_content"
@@ -22,7 +21,7 @@
                 android:id="@+id/ivImage"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/bookingfill" />
+                android:src="@drawable/logo2" />
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -31,7 +30,12 @@
                 android:textSize="18sp"
                 android:gravity="center"
                 android:textStyle="italic|bold"
-                android:text="Futsal Name" />
+                android:text="Product Name" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:text="Add TO CART" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

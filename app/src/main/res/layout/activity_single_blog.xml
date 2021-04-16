@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SingleBlogActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/colorgradient">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="BLOG TITLE"
+                android:textSize="30sp"
+                android:fontFamily="cursive"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/tv_Title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:textSize="30sp"
+                android:textColor="@color/white"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="10dp">
+                <ImageView
+                    android:id="@+id/img_blog"
+                    android:src="@drawable/logo"
+                    android:layout_width="match_parent"
+                    android:layout_margin="2dp"
+                    android:background="@color/white"
+                    android:layout_height="300dp" />
+            </LinearLayout>
+            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="BLOG DETAILS"
+                android:fontFamily="cursive"
+                android:textSize="30sp"
+                android:textColor="@color/white"/>
+            />
+            <TextView
+                android:id="@+id/tv_Body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:text="Blog created by : "
+                    android:fontFamily="cursive"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/etbusername"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:text="Blog created by"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:text="Blog created at : "
+                    android:fontFamily="cursive"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/etbdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:text="date "
+                    android:layout_weight="1"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

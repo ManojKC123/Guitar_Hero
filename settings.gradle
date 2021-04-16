@@ -1,2 +1,3 @@
+include ':guitar_hero_wear'
 include ':app'
 rootProject.name = "Guitar Hero"

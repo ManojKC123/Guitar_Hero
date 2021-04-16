@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+<<<<<<< Updated upstream
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
 
         if(!checklightSensor())
@@ -79,6 +80,9 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             addToBackStack(null)
             commit()
         }
+=======
+
+>>>>>>> Stashed changes
 
 
         btnProfileFragment = findViewById(R.id.prof)

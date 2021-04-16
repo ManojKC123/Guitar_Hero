@@ -1,0 +1,2 @@
+com/manoj/guitar_hero_wear/BuildConfig.java
+ com.manoj.guitar_hero_wear.BuildConfig

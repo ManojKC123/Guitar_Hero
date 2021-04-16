@@ -37,7 +37,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="cursive"
                         android:text="GUITARS ONLINE STORE"
-                        android:textColor="#070707"
+                        android:textColor="@color/white"
                         android:textSize="30dp"
                         android:textStyle="bold"
                         android:theme="@style/Widget.MaterialComponents.Tooltip" />
@@ -78,7 +78,7 @@
                     android:layout_gravity="left"
                     android:id="@+id/chkRememberMe"
                     android:text="Remember Username"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 

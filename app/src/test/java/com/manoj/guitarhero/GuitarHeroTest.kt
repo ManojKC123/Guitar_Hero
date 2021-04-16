@@ -1,6 +1,7 @@
 package com.manoj.guitarhero
 
 import com.manoj.guitarhero.entity.User
+import com.manoj.guitarhero.repository.ProductRepository
 import com.manoj.guitarhero.repository.UserRepository
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -8,6 +9,8 @@ import org.junit.Test
 
 class GuitarHeroTest {
     private lateinit var userRepository: UserRepository
+    private lateinit var productRepository: ProductRepository
+
     // -----------------------------User Testing-----------------------------
     @Test
     fun checkLogin() = runBlocking {
@@ -25,6 +28,15 @@ class GuitarHeroTest {
                         address = "testpassword", email = "op@gmail.com", password = "z")
         userRepository = UserRepository()
         val response = userRepository.registerUser(user)
+        val expectedResult = true
+        val actualResult = response.success
+        Assert.assertEquals(expectedResult, actualResult)
+    }
+
+    @Test
+    fun getUser() = runBlocking {
+        userRepository = UserRepository()
+        val response = userRepository.getUser()
         val expectedResult = true
         val actualResult = response.success
         Assert.assertEquals(expectedResult, actualResult)

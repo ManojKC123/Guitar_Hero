@@ -5,19 +5,18 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.manoj.guitarhero.entity.Product
+import com.manoj.guitarhero.model.ProductItem
 
-interface ProductDAO {
 
-    @Dao
-    interface FutsalDAO {
+@Dao
+    interface ProductDAO {
 
         @Insert(onConflict = OnConflictStrategy.REPLACE)
-        suspend fun insert(futsals: List<Product>)
+        suspend fun insert(products: List<ProductItem>)
 
-        @Query("select * from Product")
-        suspend fun getallFutsal() : List<Product>
+        @Query("select * from ProductItem")
+        suspend fun getallProduct() : List<ProductItem>
 
-        @Query("SELECT * FROM Product where productModel = :name")
-        suspend fun getFutsal(name: String): Product
+        @Query("SELECT * FROM ProductItem where productModel = :productModel")
+        suspend fun getProduct(productModel: String): ProductItem
     }
-}

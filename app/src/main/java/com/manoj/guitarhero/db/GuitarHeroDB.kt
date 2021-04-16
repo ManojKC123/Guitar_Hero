@@ -4,17 +4,25 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.manoj.guitarhero.dao.BlogDAO
+import com.manoj.guitarhero.dao.ProductDAO
 import com.manoj.guitarhero.dao.UserDAO
+import com.manoj.guitarhero.entity.Product
 import com.manoj.guitarhero.entity.User
+import com.manoj.guitarhero.model.BlogItem
+import com.manoj.guitarhero.model.ProductItem
 
 
 @Database(
-    entities = [(User::class)],
-    version = 1
+    entities = [(User::class),(ProductItem::class),(BlogItem::class)],
+    version = 1,
+    exportSchema = false
 )
 
 abstract class GuitarHeroDB: RoomDatabase() {
     abstract fun getUserDao(): UserDAO
+    abstract fun getProductDao(): ProductDAO
+    abstract fun getBlogDao(): BlogDAO
 
     companion object{
         @Volatile
@@ -33,7 +41,7 @@ abstract class GuitarHeroDB: RoomDatabase() {
             Room.databaseBuilder(
                 context.applicationContext,
                 GuitarHeroDB::class.java,
-                "OnlineBusTicketDB"
+                "GuitarHeroDB"
             ).build()
     }
 }

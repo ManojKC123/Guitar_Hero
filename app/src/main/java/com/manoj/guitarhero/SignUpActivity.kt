@@ -1,10 +1,13 @@
 package com.manoj.guitarhero
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 //import com.manoj.guitarhero.db.GuitarHeroDB
 import com.manoj.guitarhero.entity.User
 import com.manoj.guitarhero.repository.UserRepository
@@ -29,6 +32,8 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
+        val notificationManager = NotificationManagerCompat.from(this)
+        val notificationChannels = Notification(this)
 
         etfname = findViewById(R.id.fname)
         etlname = findViewById(R.id.lname)
@@ -61,6 +66,12 @@ class SignUpActivity : AppCompatActivity() {
                         val userRepository = UserRepository()
                         val response = userRepository.registerUser(user)
                         if (response.success == true) {
+                            val notification = NotificationCompat.Builder(this@SignUpActivity, notificationChannels.CHANNEL_1)
+                                .setSmallIcon(R.drawable.notification)
+                                .setContentTitle(response.message)
+                                .setColor(Color.GREEN)
+                                .build()
+                            notificationManager.notify(1, notification)
                             withContext(Main) {
                                 Toast.makeText(
                                         this@SignUpActivity,

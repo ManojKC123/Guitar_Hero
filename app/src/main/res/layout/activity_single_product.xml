@@ -26,11 +26,17 @@
                     android:background="@color/white"
                     android:layout_height="300dp" />
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/grey" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:text="Product Model"
+                android:fontFamily="cursive"
                 android:textSize="30sp"
                 android:textColor="@color/white"/>
             />
@@ -40,15 +46,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:text="Product Model"
                 android:textSize="20sp"
                 android:textColor="@color/white"/>
             />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/grey" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:text="PRODUCT DETAILS"
+                android:fontFamily="cursive"
                 android:textSize="30sp"
                 android:textColor="@color/white"/>
             />
@@ -60,11 +71,17 @@
                 android:textSize="20sp"
                 android:textColor="@color/white"/>
             />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/grey" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:text="Company Name"
+                android:fontFamily="cursive"
                 android:textSize="30sp"
                 android:textColor="@color/white"/>
             />
@@ -76,12 +93,18 @@
                 android:layout_marginBottom="10dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"/>
-            />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/grey" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:text="Unit Price"
+                android:fontFamily="cursive"
                 android:textSize="30sp"
                 android:textColor="@color/white"/>
             />
@@ -94,11 +117,17 @@
                 android:textSize="20sp"
                 android:textColor="@color/white"/>
             />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/grey" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:text="Color"
+                android:fontFamily="cursive"
                 android:textSize="30sp"
                 android:textColor="@color/white"/>
             />
@@ -110,15 +139,20 @@
                 android:layout_marginBottom="10dp"
                 android:textSize="20sp"
                 android:textColor="@color/white"/>
-            />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/grey" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:text="Weight"
+                android:fontFamily="cursive"
                 android:textSize="30sp"
                 android:textColor="@color/white"/>
-            />
+
             <TextView
                 android:id="@+id/tv_weight"
                 android:layout_width="match_parent"
@@ -135,71 +169,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Add to Cart"
-                android:background="@drawable/colorgradient"
+                android:background="@drawable/buttoncolor"
                 android:textSize="17sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:text="Your Blogs"
-                android:textSize="25sp"
-                android:gravity="center_horizontal"/>
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvblog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            //EditText
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:boxBackgroundColor="@color/white"
-                android:layout_marginBottom="15dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:hint="Type your blog title here "
-                    android:textSize="18sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-            //EditText
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                app:boxBackgroundColor="@color/white"
-                android:layout_marginBottom="15dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etBody"
-                    android:layout_width="match_parent"
-                    android:layout_height="95dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:hint="Type your blog body here "
-                    android:textSize="18sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            //Button
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btncomment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Comment"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:background="@drawable/colorgradient"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
         </LinearLayout>
 
     </ScrollView>

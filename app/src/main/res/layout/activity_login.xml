@@ -18,19 +18,24 @@
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="674dp"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
                 android:layout_weight="0.2"
-
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="10dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="151dp"
+                    android:layout_height="154dp"
+                    android:src="@drawable/splash" />
+
                 <LinearLayout
                     android:layout_width="fill_parent"
-                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_height="wrap_content">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -41,6 +46,7 @@
                         android:textSize="30dp"
                         android:textStyle="bold"
                         android:theme="@style/Widget.MaterialComponents.Tooltip" />
+
                 </LinearLayout>
 
                 <EditText
@@ -50,13 +56,13 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_radius"
 
-                    android:hint="Email"
+                    android:hint="Enter your EmailID Here"
                     android:inputType="textEmailAddress"
                     android:paddingLeft="10dp"
                     android:paddingRight="6dp"
                     android:singleLine="true"
                     android:textColor="#000"
-                    android:textSize="14dp" />
+                    android:textSize="20dp" />
 
 
                 <EditText
@@ -65,36 +71,60 @@
                     android:layout_height="55dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/edit_radius"
-
-                    android:hint="Password"
+                    android:hint="Enter your Pasword Here"
                     android:paddingLeft="10dp"
                     android:paddingRight="6dp"
                     android:password="true"
                     android:singleLine="true"
                     android:textColor="#000"
-                    android:textSize="14dp" />
+                    android:textSize="20dp" />
+
                 <CheckBox
-                    android:layout_margin="10dp"
-                    android:layout_gravity="left"
                     android:id="@+id/chkRememberMe"
+                    android:layout_width="376dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="left"
+                    android:layout_margin="10dp"
                     android:text="Remember Username"
                     android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="20dp" />
 
-
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/loginbtn"
-                    android:layout_width="fill_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/login_btn"
-                    android:text="login"
-                    android:textColor="#fff"
-                    android:textSize="12dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LogIN"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="@drawable/buttoncolor"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"/>
 
+                <LinearLayout
+                    android:layout_width="288dp"
+                    android:layout_height="47dp"
+                    android:layout_weight="1.8"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Don't have an account?"
+                        android:textColor="#F4F4F4"
+                        android:textSize="20dp" />
 
+                    <TextView
+                        android:id="@+id/signupbtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:text="signup"
+                        android:textColor="#0C0000"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -103,30 +133,6 @@
                 android:layout_height="1dp"
                 android:background="#d2d2d2"/>
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1.8"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Don't have an account?"
-                    android:textSize="15dp"
-                    android:textColor="#F4F4F4" />
-
-                <TextView
-                    android:id="@+id/signupbtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#00000000"
-                    android:text="signup"
-                    android:textColor="#0C0000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
         </LinearLayout>
 
 

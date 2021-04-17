@@ -27,15 +27,22 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="20dp"
                 android:gravity="center"
                 android:textStyle="italic|bold"
-                android:text="Product Name" />
-            <Button
+                android:text="Product Name"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/black"
-                android:text="Add TO CART" />
+                android:text="add to cart"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/buttoncolor"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

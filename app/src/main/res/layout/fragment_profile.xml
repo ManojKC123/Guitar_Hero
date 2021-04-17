@@ -52,8 +52,9 @@
                 android:layout_marginTop="15sp"
                 android:fontFamily="sans-serif-light"
                 android:text="Joey Tribbiani"
+                android:textStyle="bold"
                 android:textColor="@color/white"
-                android:textSize="32sp" />
+                android:textSize="35sp" />
 
 
             <TextView
@@ -64,9 +65,10 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif"
                 android:text="new york, usa"
+                android:textStyle="bold"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="30dp" />
 
             <ImageView
                 android:id="@+id/img_setting"
@@ -114,16 +116,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="string/twitterUsername"
                         android:textColor="@color/white"
-                        android:textSize="18sp" />
+                        android:textSize="20dp" />
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="15dp"
                         android:background="@color/grey" />
-
-
 
                 </LinearLayout>
                 <LinearLayout
@@ -144,9 +143,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="facebook.com/joeytrib"
                         android:textColor="@color/white"
-                        android:textSize="18sp" />
+                        android:textSize="20dp" />
 
                     <View
                         android:layout_width="match_parent"
@@ -173,9 +171,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="joey@sharenofood.com"
                         android:textColor="@color/white"
-                        android:textSize="18sp" />
+                        android:textSize="20dp" />
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -202,9 +199,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="+1-202-555-0157"
                         android:textColor="@color/white"
-                        android:textSize="18sp" />
+                        android:textSize="20dp" />
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"

@@ -100,7 +100,13 @@ class LoginActivity() : AppCompatActivity() {
                 val response = repository.checkUser(username, password)
                 if (response.success == true) {
                    ServiceBuilder.token = "Bearer " + response.token
-                    saveSharedPref()
+
+
+                    if(checkremember.isChecked){
+                        saveSharedPref()
+                    }
+
+
                     val notification = NotificationCompat.Builder(this@LoginActivity, notificationChannels.CHANNEL_1)
                         .setSmallIcon(R.drawable.notification)
                         .setContentTitle(response.message)
@@ -143,14 +149,11 @@ class LoginActivity() : AppCompatActivity() {
    private fun saveSharedPref(){
        val username = etUsername.text.toString()
        val password = etPassword.text.toString()
-       if (checkremember.isChecked){
            val sharedPref = getSharedPreferences("AppPref",
                Context.MODE_PRIVATE)
            val editor = sharedPref.edit()
            editor.putString("email", username)
            editor.putString("password", password)
            editor.apply()
-       }
-
     }
 }

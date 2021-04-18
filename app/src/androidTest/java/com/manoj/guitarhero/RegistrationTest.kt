@@ -26,7 +26,7 @@ class RegistrationTest {
             .perform(ViewActions.typeText("Dolakha"))
         closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.mailId))
-            .perform(ViewActions.typeText("manoj6419@gmail.com"))
+            .perform(ViewActions.typeText("usert@gmail.com"))
         closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.pass1))
             .perform(ViewActions.typeText("manoj"))

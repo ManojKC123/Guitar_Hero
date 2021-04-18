@@ -229,7 +229,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         if (event != null){
             if(event.sensor.type == Sensor.TYPE_PROXIMITY){
                 val values = event.values[0]
-                if (values>9){
+                if (values<1){
                     this.finishAffinity()
                 }
             }

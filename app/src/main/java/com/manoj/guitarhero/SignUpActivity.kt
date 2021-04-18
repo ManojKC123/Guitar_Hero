@@ -1,5 +1,6 @@
 package com.manoj.guitarhero
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -66,18 +67,19 @@ class SignUpActivity : AppCompatActivity() {
                         val userRepository = UserRepository()
                         val response = userRepository.registerUser(user)
                         if (response.success == true) {
-                            val notification = NotificationCompat.Builder(this@SignUpActivity, notificationChannels.CHANNEL_1)
-                                .setSmallIcon(R.drawable.notification)
-                                .setContentTitle(response.message)
-                                .setColor(Color.GREEN)
-                                .build()
-                            notificationManager.notify(1, notification)
                             withContext(Main) {
                                 Toast.makeText(
                                         this@SignUpActivity,
                                         "Register Successful",
                                         Toast.LENGTH_SHORT
                                 ).show()
+                                startActivity(
+                                        Intent(
+                                                this@SignUpActivity,
+                                                LoginActivity::class.java
+                                        )
+                                )
+                                finish()
                             }
                         }
                     }

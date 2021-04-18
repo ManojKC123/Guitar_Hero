@@ -54,6 +54,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="55dp"
                     android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/solidCircle"
                     android:background="@drawable/edit_radius"
 
                     android:hint="Enter your EmailID Here"
@@ -70,6 +71,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="55dp"
                     android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/solidCircle"
                     android:background="@drawable/edit_radius"
                     android:hint="Enter your Pasword Here"
                     android:paddingLeft="10dp"

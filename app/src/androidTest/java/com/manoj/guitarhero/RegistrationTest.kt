@@ -1,5 +1,4 @@
 package com.manoj.guitarhero
-
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
@@ -13,21 +12,28 @@ class RegistrationTest {
     val testRule = ActivityScenarioRule(SignUpActivity::class.java)
 
     @Test
-    fun testLoginUI() {
+    fun RegistrationTest() {
         Espresso.onView(ViewMatchers.withId(R.id.fname))
-            .perform(ViewActions.typeText("kiran"))
+            .perform(ViewActions.typeText("Manoj"))
+        closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.lname))
-            .perform(ViewActions.typeText("rana"))
+            .perform(ViewActions.typeText("KC"))
+        closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.etnumber))
-            .perform(ViewActions.typeText("kiran456"))
+            .perform(ViewActions.typeText("9843774669"))
+        closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.address))
-            .perform(ViewActions.typeText("password"))
+            .perform(ViewActions.typeText("Dolakha"))
+        closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.mailId))
-            .perform(ViewActions.typeText("password@gmail.com"))
+            .perform(ViewActions.typeText("usert@gmail.com"))
+        closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.pass1))
-            .perform(ViewActions.typeText("password"))
+            .perform(ViewActions.typeText("manoj"))
+        closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.pass2))
-            .perform(ViewActions.typeText("password"))
+            .perform(ViewActions.typeText("manoj"))
+        closeSoftKeyboard()
 
         closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.submit))

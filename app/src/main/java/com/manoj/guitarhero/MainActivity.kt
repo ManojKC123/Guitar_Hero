@@ -228,15 +228,15 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     override fun onSensorChanged(event: SensorEvent?) {
         if (event != null){
             if(event.sensor.type == Sensor.TYPE_PROXIMITY){
-                val values = event!!.values[0]
-                if (values>9){
+                val values = event.values[0]
+                if (values<1){
                     this.finishAffinity()
                 }
             }
             if(event.sensor.type == Sensor.TYPE_ACCELEROMETER){
-                val values = event!!.values
+                val values = event.values
                 val xAxis = values[0]
-                if (xAxis>6){
+                if (xAxis>4){
                     this.finishAffinity()
                 }
             }

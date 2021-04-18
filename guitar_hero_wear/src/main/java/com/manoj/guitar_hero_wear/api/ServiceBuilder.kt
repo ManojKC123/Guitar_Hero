@@ -1,4 +1,4 @@
-package com.manoj.guitarhero.api
+package com.manoj.guitar_hero_wear.api
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -10,7 +10,7 @@ object ServiceBuilder {
 //    private const val BASE_URL =
 //        "http://localhost:3000/"
     private const val BASE_URL =
-        "http://192.168.1.97:3000/"
+        "http://10.0.2.2:3000/"
     var token: String? = null
     private val okHttp = OkHttpClient.Builder()
     private val retrofitBuilder = Retrofit.Builder()

@@ -1,4 +1,4 @@
-package com.manoj.guitarhero
+package com.manoj.guitar_hero_wear
 
 import android.content.Intent
 import android.graphics.Color
@@ -9,8 +9,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.manoj.guitarhero.entity.User
-import com.manoj.guitarhero.repository.UserRepository
+import com.manoj.guitar_hero_wear.entity.User
+import com.manoj.guitar_hero_wear.repository.UserRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,12 +23,9 @@ class UpdateProfileActivity : AppCompatActivity() {
     private lateinit var etphone: EditText
     private lateinit var etaddress: EditText
     private lateinit var btnupdate: Button
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_profile)
-
         etaddress=findViewById(R.id.etaddress)
         etemail=findViewById(R.id.etemail)
         etfname=findViewById(R.id.etfname)
@@ -39,19 +36,13 @@ class UpdateProfileActivity : AppCompatActivity() {
         btnupdate.setOnClickListener {
             updateUser()
         }
-
-
     }
-
     private fun updateUser(){
         val etfname=etfname.text.toString()
         val etlname=etlname.text.toString()
         val etmail=etemail.text.toString()
         val etphone=etphone.text.toString()
         val etaddress=etaddress.text.toString()
-        val notificationManager = NotificationManagerCompat.from(this)
-        val notificationChannels = Notification(this)
-        notificationChannels.createNotificationChannels()
 
         val userdetails = User(firstname = etfname, lastname = etlname, email = etmail, phone = etphone, address = etaddress)
 
@@ -60,24 +51,7 @@ class UpdateProfileActivity : AppCompatActivity() {
                 val userRepository = UserRepository()
                 val response = userRepository.updateUser(userdetails)
                 if (response.success == true){
-                    val notification = NotificationCompat.Builder(this@UpdateProfileActivity, notificationChannels.CHANNEL_1)
 
-                            .setSmallIcon(R.drawable.notification)
-                            .setContentTitle(response.message)
-                            .setColor(Color.GREEN)
-                            .build()
-                    notificationManager.notify(1, notification)
-                    withContext(Dispatchers.Main){
-                        startActivity(
-                                Intent(
-                                        this@UpdateProfileActivity,
-                                        MainActivity::class.java
-                                )
-                        .setSmallIcon(R.drawable.notification)
-                        .setContentTitle(response.message)
-                        .setColor(Color.GREEN)
-                        .build()
-                    notificationManager.notify(1, notification)
                     withContext(Dispatchers.Main){
                         startActivity(
                             Intent(
@@ -91,20 +65,13 @@ class UpdateProfileActivity : AppCompatActivity() {
             catch (ex:Exception){
                 withContext(Dispatchers.Main){
                     Toast.makeText(this@UpdateProfileActivity,
-
-                            ex.toString(),
-                            Toast.LENGTH_SHORT)
-                            .show()
-
                         ex.toString(),
                         Toast.LENGTH_SHORT)
                         .show()
-
                 }
             }
         }
     }
-
     private fun loadUserDetails() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -131,16 +98,11 @@ class UpdateProfileActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(
-
-                            this@UpdateProfileActivity,
-
                         this@UpdateProfileActivity,
                         "Error: ${e.toString()}", Toast.LENGTH_SHORT
-
                     ).show()
                 }
             }
         }
     }
-
-
+}

@@ -21,25 +21,31 @@
             android:orientation="vertical"
             android:padding="6dp">
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="131dp"
+                android:layout_height="84dp"
+                android:src="@drawable/splash" />
 
             <TextView
                 android:id="@+id/logotext"
                 android:layout_width="wrap_content"
-                android:visibility="gone"
                 android:layout_height="wrap_content"
-                android:text="Greens Florist"
+                android:fontFamily="cursive"
+                android:textColor="@color/white"
+                android:text="Create an Account"
                 android:textSize="44dp" />
 
             <EditText
                 android:id="@+id/fname"
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
+                android:backgroundTint="@color/solidCircle"
                 android:background="@drawable/edit_radius"
                 android:hint="First Name"
+                android:textColor="@color/black"
                 android:paddingLeft="10dp"
                 android:singleLine="true"
-                android:textColor="#000"
-                android:textSize="14dp" />
+                android:textSize="20dp" />
 
 
 
@@ -48,19 +54,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@color/solidCircle"
                 android:background="@drawable/edit_radius"
                 android:hint="Last Name"
                 android:maxLength="10"
                 android:paddingLeft="10dp"
                 android:singleLine="true"
                 android:textColor="#000"
-                android:textSize="14dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/etnumber"
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@color/solidCircle"
                 android:background="@drawable/edit_radius"
                 android:hint="Mobile"
                 android:inputType="number"
@@ -68,25 +76,27 @@
                 android:paddingLeft="10dp"
                 android:singleLine="true"
                 android:textColor="#000"
-                android:textSize="14dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/address"
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@color/solidCircle"
                 android:background="@drawable/edit_radius"
                 android:hint="Address"
                 android:paddingLeft="10dp"
                 android:singleLine="true"
                 android:textColor="#000"
-                android:textSize="14dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/mailId"
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@color/solidCircle"
                 android:background="@drawable/edit_radius"
                 android:hint="Email ID"
                 android:inputType="textEmailAddress"
@@ -94,7 +104,7 @@
                 android:paddingLeft="10dp"
                 android:singleLine="true"
                 android:textColor="#000"
-                android:textSize="14dp" />
+                android:textSize="20dp" />
 
 
             <EditText
@@ -102,13 +112,14 @@
                 android:layout_width="fill_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@color/solidCircle"
                 android:background="@drawable/edit_radius"
                 android:hint="Password"
                 android:paddingLeft="10dp"
                 android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="#000"
-                android:textSize="14dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/pass2"
@@ -116,27 +127,24 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edit_radius"
+                android:backgroundTint="@color/solidCircle"
                 android:hint="Confirm Password"
                 android:paddingLeft="10dp"
                 android:singleLine="true"
                 android:inputType="textPassword"
-
                 android:textColor="#000"
-                android:textSize="14dp" />
-
-
-
-
-
-            <Button
+                android:textSize="20dp" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/submit"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Signup"
-                android:textColor="#fff"
-                android:textSize="12dp" />
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/buttoncolor"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"/>
 
 
         </LinearLayout>

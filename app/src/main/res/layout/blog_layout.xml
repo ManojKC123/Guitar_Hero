@@ -31,11 +31,17 @@
                 android:gravity="center"
                 android:textStyle="italic|bold"
                 android:text="Product Name" />
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/black"
-                android:text="Read More" />
+                android:text="read more"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/buttoncolor"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

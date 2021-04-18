@@ -26,7 +26,6 @@
         <activity android:name=".UpdateProfileActivity"></activity>
         <activity android:name=".SingleBlogActivity" />
         <activity android:name=".SingleProductActivity" />
-        <activity android:name=".NotificationActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

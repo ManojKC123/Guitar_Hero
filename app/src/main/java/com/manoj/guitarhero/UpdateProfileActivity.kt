@@ -61,6 +61,7 @@ class UpdateProfileActivity : AppCompatActivity() {
                 val response = userRepository.updateUser(userdetails)
                 if (response.success == true){
                     val notification = NotificationCompat.Builder(this@UpdateProfileActivity, notificationChannels.CHANNEL_1)
+
                             .setSmallIcon(R.drawable.notification)
                             .setContentTitle(response.message)
                             .setColor(Color.GREEN)
@@ -72,6 +73,17 @@ class UpdateProfileActivity : AppCompatActivity() {
                                         this@UpdateProfileActivity,
                                         MainActivity::class.java
                                 )
+                        .setSmallIcon(R.drawable.notification)
+                        .setContentTitle(response.message)
+                        .setColor(Color.GREEN)
+                        .build()
+                    notificationManager.notify(1, notification)
+                    withContext(Dispatchers.Main){
+                        startActivity(
+                            Intent(
+                                this@UpdateProfileActivity,
+                                MainActivity::class.java
+                            )
                         )
                     }
                 }
@@ -79,9 +91,15 @@ class UpdateProfileActivity : AppCompatActivity() {
             catch (ex:Exception){
                 withContext(Dispatchers.Main){
                     Toast.makeText(this@UpdateProfileActivity,
+
                             ex.toString(),
                             Toast.LENGTH_SHORT)
                             .show()
+
+                        ex.toString(),
+                        Toast.LENGTH_SHORT)
+                        .show()
+
                 }
             }
         }
@@ -113,12 +131,16 @@ class UpdateProfileActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(
+
                             this@UpdateProfileActivity,
-                            "Error: ${e.toString()}", Toast.LENGTH_SHORT
+
+                        this@UpdateProfileActivity,
+                        "Error: ${e.toString()}", Toast.LENGTH_SHORT
+
                     ).show()
                 }
             }
         }
     }
 
-}
+

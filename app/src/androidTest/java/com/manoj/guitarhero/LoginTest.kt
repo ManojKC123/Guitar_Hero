@@ -42,8 +42,5 @@ class LoginTest {
             .perform(click())
 
         Thread.sleep(2000)
-
-        onView(withId(R.id.tv_email))
-            .check(ViewAssertions.matches(ViewMatchers.withText("user1@gmail.com")))
     }
 }

@@ -236,7 +236,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             if(event.sensor.type == Sensor.TYPE_ACCELEROMETER){
                 val values = event.values
                 val xAxis = values[0]
-                if (xAxis>6){
+                if (xAxis>4){
                     this.finishAffinity()
                 }
             }

@@ -12,8 +12,6 @@ class MainActivity : WearableActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        login = findViewById(R.id.login)
-
         // Enables Always-on
         setAmbientEnabled()
 

@@ -18,7 +18,7 @@ class GuitarHeroUnitTest {
     @Test
     fun checkLogin() = runBlocking {
         userRepository = UserRepository()
-        val response = userRepository.checkUser("user@gmail.com", "u")
+        val response = userRepository.checkUser("usert@gmail.com", "u")
         val expectedResult = true
         val actualResult = response.success
         Assert.assertEquals(expectedResult, actualResult)

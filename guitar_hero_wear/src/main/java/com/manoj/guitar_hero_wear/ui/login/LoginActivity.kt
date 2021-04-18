@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(
                         this@LoginActivity,
-                        "Login error", Toast.LENGTH_SHORT
+                        "$ex", Toast.LENGTH_SHORT
                     ).show()
                 }
             }
